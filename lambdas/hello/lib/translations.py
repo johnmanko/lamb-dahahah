@@ -1,0 +1,23 @@
+translations = [
+    "English: Hello, world!",
+    "Spanish: ¡Hola, mundo!",
+    "French: Bonjour, le monde!",
+    "German: Hallo, Welt!",
+    "Chinese (Simplified): 你好，世界！",
+    "Japanese: こんにちは、世界！",
+    "Korean: 안녕하세요, 세계!",
+    "Russian: Привет, мир!",
+    "Arabic: مرحبا، بالعالم!",
+    "Hindi: नमस्ते, दुनिया!",
+    "Portuguese: Olá, mundo!",
+    "Italian: Ciao, mondo!",
+    "Turkish: Merhaba, dünya!",
+    "Vietnamese: Xin chào, thế giới!",
+    "Thai: สวัสดี, โลก!",
+    "Bengali: হ্যালো, বিশ্ব!",
+    "Swedish: Hej, världen!",
+    "Danish: Hej, verden!",
+    "Finnish: Hei, maailma!",
+    "Hungarian: Helló, világ!",
+    "Hebrew: שלום, עולם!"
+]

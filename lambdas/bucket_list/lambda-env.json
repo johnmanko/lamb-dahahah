@@ -1,0 +1,5 @@
+{
+    "Variables": {
+		"BUCKET_NAME": "lambdahahah_logs"
+	}
+}

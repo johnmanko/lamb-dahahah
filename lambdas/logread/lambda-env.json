@@ -1,0 +1,6 @@
+{
+    "Variables": {
+        "LOG_GROUP_NAME": "/aws/lambda/lambdahahah_hello",
+        "REGEX_PATTERN": "(?i)Billed"
+    }
+}
