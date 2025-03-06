@@ -1,6 +1,6 @@
 ![Lamb-dahahah](./header.webp "Lamb-dahahah")
 
-## Preperation
+## Preparation
 
 Install any dependencies (if your function uses external libraries). Use a virtual environment for this:
 
