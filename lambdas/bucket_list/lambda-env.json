@@ -1,5 +1,6 @@
 {
     "Variables": {
-		"BUCKET_NAME": "lambdahahah_logs"
+		"BUCKET_NAME": "lambdahahah_logs",
+		"BUCKET_KEY_PREFIX": "logs/"
 	}
 }

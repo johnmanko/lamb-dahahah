@@ -1,3 +1,12 @@
+## Config
+
+Lambda environment variables.
+
+* `BUCKET_NAME` - The S3 bucket name
+* `BUCKET_KEY_PREFIX` - The prefix key for all objects
+
+## S3 Contents Object
+
 In the response of the `list_objects_v2()` call from the `boto3` S3 client, the `Contents` field contains a list of objects, each of which represents an S3 object. The standard fields included for each object do not have many `datetime` fields. The primary field that is a `datetime` type is the `LastModified` field.
 
 Here are the key fields returned in the `Contents` list:
