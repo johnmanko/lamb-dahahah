@@ -387,6 +387,9 @@ lambda_role_arn = "arn:aws:iam::000000000000:role/portfolio-lambdahahah-lambda-r
 Update the function(s) with the correct code:
 ```shell
 ./lambda-install.sh hello
+./lambda-install.sh logread
+./lambda-install.sh bucket_list
+./lambda-install.sh bucket_read
 ```
 
 Test:
