@@ -427,7 +427,7 @@ awslocal s3 ls s3://my_bucket_name --recursive
 2025-03-06 12:48:23      20918 logs/server_20.log
 ```
 
-```json
+```shell
 awslocal lambda invoke --function-name lambdahahah-bucket_list results.json
 cat results.json | jq .
 {
