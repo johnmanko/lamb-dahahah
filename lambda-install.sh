@@ -10,7 +10,7 @@ FUNCTION_ROLE=""
 LAMBDAS_PATH="lambdas"
 AWS_CMD=${AWS_CMD:-awslocal}
 FUNCTION_GROUP_PREFIX="lambdahahah"
-ROLE_NAME="lambdahahah-execution-role"
+ROLE_NAME="portfolio-lambdahahah-lambda-role"
 TRUST_POLICY="file://lambdas/trust-policy.json"
 
 get_or_create_role() {
@@ -112,17 +112,17 @@ echo "$FUNCTION_ROLE"
 FUNCTION_FULL_NAME="$FUNCTION_GROUP_PREFIX-$FUNCTION_NAME"
 
 if $AWS_CMD lambda get-function --function-name "$FUNCTION_FULL_NAME" &>/dev/null; then
+  echo "Updating Function Code for $FUNCTION_FULL_NAME"
   cd "$LAMBDAS_PATH/$FUNCTION_NAME"
   build
   $AWS_CMD lambda update-function-code \
             --function-name "$FUNCTION_FULL_NAME" \
-            --zip-file fileb://$ZIP_FILE \
-            --tags "Group=Portfolio,App=Lambdahahah,Repo=lamb-dahahah" \
-            --environment file://lambda-env.json 
+            --zip-file fileb://$ZIP_FILE
 elif [[ -z "$FUNCTION_ROLE" ]]; then
   echo "Error: role required for function creation."
   usage
 else
+  echo "Creating Function $FUNCTION_FULL_NAME"
   cd "$LAMBDAS_PATH/$FUNCTION_NAME"
   build
   $AWS_CMD lambda create-function --function-name "$FUNCTION_FULL_NAME" \
@@ -130,6 +130,6 @@ else
       --handler lambda.lambda_handler \
       --runtime $RUNTIME \
       --role $FUNCTION_ROLE \
-      --tags "Group=Portfolio,App=Lambdahahah,Repo=lamb-dahahah" \
+      --tags "AppGroup=Portfolio,App=Lambdahahah,Repo=lamb-dahahah" \
       --environment file://lambda-env.json 
 fi

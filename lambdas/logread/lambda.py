@@ -26,7 +26,8 @@ def lambda_handler(event, context):
     }
 
     regex_pattern = os.environ.get("REGEX_PATTERN") #r'(?i)error'
-    regex_type = os.environ.get("REGEX_TYPE") #r'(?i)error'
+    #regex_type = os.environ.get("REGEX_TYPE") # filter/mask - not implemented yet
+    regex_type = "filter"
         
     response = {
         'requestId': context.aws_request_id,
