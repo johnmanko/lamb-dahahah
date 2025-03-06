@@ -1,5 +1,5 @@
 dev.tfvars
 .terraform
-*.tfstate
+*.tfstate*
 .terraform.lock.hcl
 lambda.zip

@@ -15,3 +15,9 @@ module "lambdas" {
   cloudwatch_log_match_regex = var.cloudwatch_log_match_regex
 }
 
+module "s3_bucket" {
+  source = "./modules/s3"
+  aws_region = var.aws_region
+  tags = var.tags 
+  s3_bucket_name = var.s3_bucket_name
+}
