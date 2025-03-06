@@ -56,8 +56,10 @@ If using LocalStack, you can apply like such:
 TF_CMD=tofu tflocal apply -var-file=dev.tfvars
 ```
 
+---
+
 <details>
-  <summary>Expand to output</summary>
+  <summary>Expand To View "apply" Output</summary>
 
 ```shell
 module.lambdas.data.archive_file.lambda_zip: Reading...
@@ -379,6 +381,8 @@ lambda_logread_lambda_function_name = "lambdahahah-logread"
 lambda_role_arn = "arn:aws:iam::000000000000:role/portfolio-lambdahahah-lambda-role"
 ```
 </details>
+
+---
 
 Update the function(s) with the correct code:
 ```shell
