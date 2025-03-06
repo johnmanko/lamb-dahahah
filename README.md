@@ -11,7 +11,7 @@ source .venv/bin/activate
 
 ### Terraform Create/Update
 
-
+TBD
 
 ### Manually Create/Update
 
