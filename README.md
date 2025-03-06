@@ -427,21 +427,6 @@ awslocal s3 ls s3://my_bucket_name --recursive
 2025-03-06 12:48:23      20918 logs/server_20.log
 ```
 
-```shell
-awslocal lambda invoke --function-name lambdahahah-bucket_list results.json
-cat results.json | jq .
-{
-  "statusCode": 200,
-  "headers": {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "OPTIONS,GET"
-  },
-  "body": "[{\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20746, \"key\": \"logs/server_01.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20743, \"key\": \"logs/server_02.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21060, \"key\": \"logs/server_03.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21135, \"key\": \"logs/server_04.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20701, \"key\": \"logs/server_05.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20604, \"key\": \"logs/server_06.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20817, \"key\": \"logs/server_07.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20994, \"key\": \"logs/server_08.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20934, \"key\": \"logs/server_09.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20943, \"key\": \"logs/server_10.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20885, \"key\": \"logs/server_11.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20872, \"key\": \"logs/server_12.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20920, \"key\": \"logs/server_13.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21055, \"key\": \"logs/server_14.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20569, \"key\": \"logs/server_15.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21017, \"key\": \"logs/server_16.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21193, \"key\": \"logs/server_17.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20696, \"key\": \"logs/server_18.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20782, \"key\": \"logs/server_19.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20918, \"key\": \"logs/server_20.log\"}]"
-}
-```
-
 ### Manually Create/Update
 
 Available Lambda functions:
@@ -535,6 +520,21 @@ awslocal lambda invoke --function-name lambdahahah-hello results.json
 }
 cat results.json
 {"translation": "こんにちは、世界！", "language": "Japanese", "requestId": "5b6cb3b9-2b97-43f2-aa05-885e9971948d"}%
+```
+
+```shell
+awslocal lambda invoke --function-name lambdahahah-bucket_list results.json
+cat results.json | jq .
+{
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "OPTIONS,GET"
+  },
+  "body": "[{\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20746, \"key\": \"logs/server_01.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20743, \"key\": \"logs/server_02.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21060, \"key\": \"logs/server_03.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21135, \"key\": \"logs/server_04.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20701, \"key\": \"logs/server_05.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20604, \"key\": \"logs/server_06.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20817, \"key\": \"logs/server_07.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20994, \"key\": \"logs/server_08.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20934, \"key\": \"logs/server_09.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20943, \"key\": \"logs/server_10.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20885, \"key\": \"logs/server_11.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20872, \"key\": \"logs/server_12.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20920, \"key\": \"logs/server_13.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21055, \"key\": \"logs/server_14.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20569, \"key\": \"logs/server_15.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21017, \"key\": \"logs/server_16.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 21193, \"key\": \"logs/server_17.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20696, \"key\": \"logs/server_18.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20782, \"key\": \"logs/server_19.log\"}, {\"lastModified\": \"2025-03-06T17:48:23+00:00\", \"size\": 20918, \"key\": \"logs/server_20.log\"}]"
+}
 ```
 
 3. Clean up
