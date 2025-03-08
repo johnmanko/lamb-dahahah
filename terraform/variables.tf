@@ -35,3 +35,9 @@ variable "cloudwatch_log_match_regex" {
     description = "Lambda bucket read regex"
     type = string
 }
+
+variable "enable_lambda_url" {
+  description = "Enable the lambda urls"
+  type    = bool
+  default = false
+}

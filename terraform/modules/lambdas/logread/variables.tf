@@ -45,3 +45,7 @@ variable "environment_variables" {
     description = "Environment variables for the lambda function"
     type = map(string)
 }
+variable "enable_lambda_url" {
+  description = "Enable the lambda url"
+  type    = bool
+}

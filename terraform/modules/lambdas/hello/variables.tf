@@ -48,3 +48,7 @@ variable "environment_variables" {
       NOT_USED = "NOT_USED"
     }
 }
+variable "enable_lambda_url" {
+  description = "Enable the lambda url"
+  type    = bool
+}

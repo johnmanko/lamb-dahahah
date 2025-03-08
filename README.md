@@ -114,13 +114,13 @@ OpenTofu will perform the following actions:
       + inline_policy (known after apply)
     }
 
-  # module.lambdas.module.bucket_list_lambda.aws_lambda_function.lambda_function will be created
+  # module.lambdas.module.bucket-list_lambda.aws_lambda_function.lambda_function will be created
   + resource "aws_lambda_function" "lambda_function" {
       + architectures                  = (known after apply)
       + arn                            = (known after apply)
       + code_sha256                    = (known after apply)
       + filename                       = "./lambda.zip"
-      + function_name                  = "lambdahahah-bucket_list"
+      + function_name                  = "lambdahahah-bucket-list"
       + handler                        = "lambda.lambda_handler"
       + id                             = (known after apply)
       + invoke_arn                     = (known after apply)
@@ -169,13 +169,13 @@ OpenTofu will perform the following actions:
       + tracing_config (known after apply)
     }
 
-  # module.lambdas.module.bucket_read_lambda.aws_lambda_function.lambda_function will be created
+  # module.lambdas.module.bucket-read_lambda.aws_lambda_function.lambda_function will be created
   + resource "aws_lambda_function" "lambda_function" {
       + architectures                  = (known after apply)
       + arn                            = (known after apply)
       + code_sha256                    = (known after apply)
       + filename                       = "./lambda.zip"
-      + function_name                  = "lambdahahah-bucket_read"
+      + function_name                  = "lambdahahah-bucket-read"
       + handler                        = "lambda.lambda_handler"
       + id                             = (known after apply)
       + invoke_arn                     = (known after apply)
@@ -335,10 +335,10 @@ OpenTofu will perform the following actions:
 Plan: 5 to add, 0 to change, 0 to destroy.
 
 Changes to Outputs:
-  + lambda_bucket_list_lambda_function_arn  = (known after apply)
-  + lambda_bucket_list_lambda_function_name = "lambdahahah-bucket_list"
-  + lambda_bucket_read_lambda_function_arn  = (known after apply)
-  + lambda_bucket_read_lambda_function_name = "lambdahahah-bucket_read"
+  + lambda_bucket-list_lambda_function_arn  = (known after apply)
+  + lambda_bucket-list_lambda_function_name = "lambdahahah-bucket-list"
+  + lambda_bucket-read_lambda_function_arn  = (known after apply)
+  + lambda_bucket-read_lambda_function_name = "lambdahahah-bucket-read"
   + lambda_hello_lambda_function_arn        = (known after apply)
   + lambda_hello_lambda_function_name       = "lambdahahah-hello"
   + lambda_logread_lambda_function_arn      = (known after apply)
@@ -355,25 +355,25 @@ module.iam_roles.aws_iam_role.lambda_role: Creating...
 module.iam_roles.aws_iam_role.lambda_role: Creation complete after 0s [id=portfolio-lambdahahah-lambda-role]
 module.lambdas.module.hello_lambda.aws_lambda_function.lambda_function: Creating...
 module.lambdas.module.logread_lambda.aws_lambda_function.lambda_function: Creating...
-module.lambdas.module.bucket_list_lambda.aws_lambda_function.lambda_function: Creating...
-module.lambdas.module.bucket_read_lambda.aws_lambda_function.lambda_function: Creating...
-module.lambdas.module.bucket_read_lambda.aws_lambda_function.lambda_function: Creation complete after 5s [id=lambdahahah-bucket_read]
+module.lambdas.module.bucket-list_lambda.aws_lambda_function.lambda_function: Creating...
+module.lambdas.module.bucket-read_lambda.aws_lambda_function.lambda_function: Creating...
+module.lambdas.module.bucket-read_lambda.aws_lambda_function.lambda_function: Creation complete after 5s [id=lambdahahah-bucket-read]
 module.lambdas.module.hello_lambda.aws_lambda_function.lambda_function: Still creating... [10s elapsed]
 module.lambdas.module.logread_lambda.aws_lambda_function.lambda_function: Still creating... [10s elapsed]
-module.lambdas.module.bucket_list_lambda.aws_lambda_function.lambda_function: Still creating... [10s elapsed]
+module.lambdas.module.bucket-list_lambda.aws_lambda_function.lambda_function: Still creating... [10s elapsed]
 module.lambdas.module.hello_lambda.aws_lambda_function.lambda_function: Creation complete after 10s [id=lambdahahah-hello]
 module.lambdas.module.logread_lambda.aws_lambda_function.lambda_function: Creation complete after 16s [id=lambdahahah-logread]
-module.lambdas.module.bucket_list_lambda.aws_lambda_function.lambda_function: Still creating... [20s elapsed]
-module.lambdas.module.bucket_list_lambda.aws_lambda_function.lambda_function: Creation complete after 21s [id=lambdahahah-bucket_list]
+module.lambdas.module.bucket-list_lambda.aws_lambda_function.lambda_function: Still creating... [20s elapsed]
+module.lambdas.module.bucket-list_lambda.aws_lambda_function.lambda_function: Creation complete after 21s [id=lambdahahah-bucket-list]
 
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-lambda_bucket_list_lambda_function_arn = "arn:aws:lambda:us-east-2:000000000000:function:lambdahahah-bucket_list"
-lambda_bucket_list_lambda_function_name = "lambdahahah-bucket_list"
-lambda_bucket_read_lambda_function_arn = "arn:aws:lambda:us-east-2:000000000000:function:lambdahahah-bucket_read"
-lambda_bucket_read_lambda_function_name = "lambdahahah-bucket_read"
+lambda_bucket-list_lambda_function_arn = "arn:aws:lambda:us-east-2:000000000000:function:lambdahahah-bucket-list"
+lambda_bucket-list_lambda_function_name = "lambdahahah-bucket-list"
+lambda_bucket-read_lambda_function_arn = "arn:aws:lambda:us-east-2:000000000000:function:lambdahahah-bucket-read"
+lambda_bucket-read_lambda_function_name = "lambdahahah-bucket-read"
 lambda_hello_lambda_function_arn = "arn:aws:lambda:us-east-2:000000000000:function:lambdahahah-hello"
 lambda_hello_lambda_function_name = "lambdahahah-hello"
 lambda_logread_lambda_function_arn = "arn:aws:lambda:us-east-2:000000000000:function:lambdahahah-logread"
@@ -388,8 +388,8 @@ Update the function(s) with the correct code:
 ```shell
 ./lambda-install.sh hello
 ./lambda-install.sh logread
-./lambda-install.sh bucket_list
-./lambda-install.sh bucket_read
+./lambda-install.sh bucket-list
+./lambda-install.sh bucket-read
 ```
 
 Test:
@@ -432,8 +432,8 @@ awslocal s3 ls s3://my_bucket_name --recursive
 Available Lambda functions:
 
 * `hello` - A randomized multilingual "Hello World"
-* `bucket_list` - Lists objects in a pre-defined bucket and prefix
-* `bucket_read` - Reads an object from a pre-defined bucket
+* `bucket-list` - Lists objects in a pre-defined bucket and prefix
+* `bucket-read` - Reads an object from a pre-defined bucket
 * `logread` - Reads CloudWatch logs 
 
 ```shell
@@ -503,10 +503,10 @@ awslocal lambda list-functions  --query 'Functions[].{Name:FunctionName, Runtime
 +--------------------------+--------------+
 |           Name           |   Runtime    |
 +--------------------------+--------------+
-|  lambdahahah-bucket_read |  python3.12  |
+|  lambdahahah-bucket-read |  python3.12  |
 |  lambdahahah-hello       |  python3.12  |
 |  lambdahahah-logread     |  python3.12  |
-|  lambdahahah-bucket_list |  python3.12  |
+|  lambdahahah-bucket-list |  python3.12  |
 +--------------------------+--------------+
 ```
 
@@ -523,7 +523,7 @@ cat results.json
 ```
 
 ```shell
-awslocal lambda invoke --function-name lambdahahah-bucket_list results.json
+awslocal lambda invoke --function-name lambdahahah-bucket-list results.json
 cat results.json | jq .
 {
   "statusCode": 200,

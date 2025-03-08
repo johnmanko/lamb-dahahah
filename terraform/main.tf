@@ -13,6 +13,7 @@ module "lambdas" {
   s3_bucket_key_prefix = var.s3_bucket_key_prefix
   cloudwatch_log_group_name = var.cloudwatch_log_group_name
   cloudwatch_log_match_regex = var.cloudwatch_log_match_regex
+  enable_lambda_url = var.enable_lambda_url
 }
 
 module "s3_bucket" {

@@ -14,7 +14,6 @@ resource "aws_lambda_function" "lambda_function" {
     variables = var.environment_variables
   }
 
-
   tags = merge(
     {
       // Custom ID for the lambda function URL with LocalStack

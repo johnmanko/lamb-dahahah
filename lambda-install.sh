@@ -70,7 +70,7 @@ parse_args() {
 
   usage() {
     echo -e "Usage: $0 <name> \n \
-    <name>\t\tThe name of the lambda function (hello, logread, bucket_list, bucket_read, bucket_read_pii) \
+    <name>\t\tThe name of the lambda function (hello, logread, bucket-list, bucket-read, bucket_read_pii) \
     "
     exit 1
   }
@@ -130,6 +130,6 @@ else
       --handler lambda.lambda_handler \
       --runtime $RUNTIME \
       --role $FUNCTION_ROLE \
-      --tags "AppGroup=Portfolio,App=Lambdahahah,Repo=lamb-dahahah" \
+      --tags "AppGroup=Portfolio,App=Lambdahahah,Repo=lamb-dahahah,_custom_id_=$FUNCTION_FULL_NAME" \
       --environment file://lambda-env.json 
 fi

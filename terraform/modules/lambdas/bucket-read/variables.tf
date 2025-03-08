@@ -26,7 +26,7 @@ variable "tags" {
 variable "lambda_function_name" {
   description = "Lambda function name"
   type        = string
-  default     = "lambdahahah-bucket_list"
+  default     = "lambdahahah-bucket-read"
 }
 
 variable "runtime" {
@@ -44,4 +44,8 @@ variable "handler" {
 variable "environment_variables" {
     description = "Environment variables for the lambda function"
     type = map(string)
+}
+variable "enable_lambda_url" {
+  description = "Enable the lambda url"
+  type    = bool
 }
