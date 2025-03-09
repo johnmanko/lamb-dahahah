@@ -16,4 +16,5 @@ resource "aws_s3_object" "upload_files" {
     key    = "logs/${each.value}"  # S3 destination path
     source = "${path.module}/sample-logs/${each.value}"  # Local path
     etag   = filemd5("${path.module}/sample-logs/${each.value}")  # Ensures re-upload only if the file changes
+    content_type = "text/plain" # A hardcoded hack.  Ideally, should create a function to detect mime type
 }
