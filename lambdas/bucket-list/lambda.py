@@ -16,7 +16,7 @@ def lambda_handler(event, context):
 
     response = s3.list_objects_v2(Bucket=BUCKET_NAME, Prefix=BUCKET_KEY_PREFIX)
 
-    files = []
+    objects = []
 
     if 'Contents' in response:
         for obj in response['Contents']:
@@ -24,11 +24,18 @@ def lambda_handler(event, context):
                 continue
             if 'LastModified' in obj:
                 obj['LastModified'] = obj['LastModified'].isoformat()
-            files.append({
+            objects.append({
                 'lastModified': obj['LastModified'],
                 'size': obj['Size'],
                 'key': obj['Key']
             })
+
+    body = {
+        'requestId': context.aws_request_id,
+        'bucket': BUCKET_NAME,
+        'prefix': BUCKET_KEY_PREFIX,
+        'objects': objects
+    }
 
     headers = {
         "Content-Type": "application/json",
@@ -40,7 +47,7 @@ def lambda_handler(event, context):
     return {
         'statusCode': 200,
         "headers": headers,
-        'body': json.dumps(files)
+        'body': json.dumps(body)
     }
 
     
