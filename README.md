@@ -584,6 +584,9 @@ awslocal s3 ls com.johnmanko.portfolio.lambdahahah
 awslocal s3 ls s3://com.johnmanko.portfolio.lambdahahah --recursive
 ```
 ```shell
+awslocal logs describe-log-groups
+```
+```shell
 awslocal logs tail /aws/lambda/lambdahahah-hello --follow\n
 ```
 ```shell
