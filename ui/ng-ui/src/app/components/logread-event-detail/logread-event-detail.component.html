@@ -1,0 +1,16 @@
+<div class="p-4 bg-slate-700 rounded-lg mb-1">
+  {{event().message}}
+  <div class="text-xs mt-1 text-slate-400 border-t border-slate-500 pt-1">
+    <div class="flex flex-row">
+      <div class="w-1/2">
+        Timestamp
+        <div class="text-info ">{{event().timestamp | date:'MM/dd/yyyy @ HH:mm:ss'}}</div>
+      </div>
+      <div class="w-1/2 justify-right text-right">
+        Ingestion
+        <div class="text-info">{{event().ingestionTime | date:'MM/dd/yyyy @ HH:mm:ss'}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>

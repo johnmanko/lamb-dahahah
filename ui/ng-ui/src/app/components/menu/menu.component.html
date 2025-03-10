@@ -1,0 +1,10 @@
+<ul class="menu bg-neutral rounded-box w-60 min-h-full max-h-full">
+  @for (item of items(); track item.label){
+    <li>
+      <button [routerLink]="item.route"
+              class="text-lg link-primary"
+              [disabled]="isActive(item.route)"
+              [ngClass]="{'bg-amber-100 btn-disabled': isActive(item.route)}">{{ item.label }}</button>
+    </li>
+  }
+</ul>

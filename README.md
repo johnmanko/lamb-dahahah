@@ -544,6 +544,55 @@ awslocal lambda delete-function --function-name lambdahahah-hello
 awslocal iam delete-role --role-name lambdahahah-execution-role
 ```
 
+## Angular UI
+
+There's an included Angular UI for playing with the deployed lambdas, but it's configured with LocalStack function urls.
+
+### Hello
+![Lambda Hello](./assets/lambda-hello.png)
+
+### CloudWatch Events Logread
+![Lambda Logread](./assets/lambda-logread.png)
+
+### Bucket List and Object Read
+![Lambda Bucket List and Read](./assets/lambda-bucket-read.png)
+
+
+## Troubleshooting
+
+A few command for inspecting deployments.  See the full [AWS CLI Command Reference¶](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html).
+
+```shell
+awslocal lambda list-functions  --query 'Functions[].{Name:FunctionName, Runtime:Runtime}' --output table
+```
+```shell
+awslocal lambda invoke --function-name hello results.json
+```
+```shell
+awslocal iam list-roles
+```
+```shell
+awslocal iam get-role --role-name portfolio-lambdahahah-lambda-role --query 'Role.Arn'
+```
+```shell
+awslocal s3 ls
+```
+```shell
+awslocal s3 ls com.johnmanko.portfolio.lambdahahah
+```
+```shell
+awslocal s3 ls s3://com.johnmanko.portfolio.lambdahahah --recursive
+```
+```shell
+awslocal logs tail /aws/lambda/lambdahahah-hello --follow\n
+```
+```shell
+awslocal lambda get-function --function-name lambdahahah-logread
+```
+```shell
+awslocal s3api head-object --bucket com.johnmanko.portfolio.lambdahahah --key logs/server_20.log
+```
+
 # Handler Parameters
 
 The lambda handler accepts two parameters: `event` and `context`.

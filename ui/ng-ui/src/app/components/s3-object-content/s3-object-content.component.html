@@ -1,0 +1,9 @@
+<div class="mb-1">
+  <div class="badge badge-soft badge-primary me-2">key: {{objectKey()}}</div>
+  <div class="badge badge-soft badge-secondary">context-type: {{contentType()}}</div>
+</div>
+<div class="mockup-code  max-h-[calc(100vh-400px)] overflow-scroll" >
+  @for(line of contentBody(); track $index) {
+    <pre [attr.data-prefix]="$index+1"><code>{{line}}</code></pre>
+  }
+</div>
